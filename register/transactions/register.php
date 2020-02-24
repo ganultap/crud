@@ -45,7 +45,7 @@
            }
 
             $birthplace = test_input($_POST["birthplace"]);
-            if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z0-9\s{1}]+$)/',
+            if (!preg_match('/(?!^ +$)^.+$/',
             $birthplace)) {
                 $birthplace = "Invalid Input";
              }
@@ -63,7 +63,7 @@
              }
 
              $address = test_input($_POST["address"]);
-             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z0-9\s{1}]+$)/',
+             if (!preg_match("/(?!^ +$)^.+$/",
              $address)) {
                 $address = "Invalid Input";
              }

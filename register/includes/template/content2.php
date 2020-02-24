@@ -34,26 +34,33 @@
             <div class="row">
                 <div class="col-lg-12 mt-2">
                     <input type="text" name="email" class="form-control"
-                        placeholder="Email Address Ex: juandelacruz@mail.com" required>
+                        placeholder="Email Address e.g. juandelacruz@mail.com" required>
                 </div>
             </div>
             <div class="mb-4">
                 <hr class="solid">
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <label>Date of Birth</label>
-                    <input type="date" name="birthdate" class="form-control" required>
-                </div>
-                <div class="col-sm-8">
+                <div class="col-lg-12 mb-2 small">
                     <label>Place of Birth</label>
                     <input type="text" name="birthplace" class="form-control"
                         placeholder="House No., Brgy., City, Country" required>
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-6 small">
+                    <label>Date of Birth</label>
+                    <input type="date" name="birthdate" class="form-control" required>
+                </div>
+                <div class="col-sm-6 small">
+                    <label>Contact</label>
+                    <input type="text" name="contact" class="form-control" placeholder="e.g. +639123456789"
+                        required>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12 r-5">
-                    <label class="r-2">Gender </label>
+                    <label class="r-2 small">Gender </label>
                     <div class="form-check-inline p-3">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="gender" value="Male" checked>Male
@@ -66,17 +73,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>Contact Number</label>
-                    <input type="text" name="contact" class="form-control" placeholder="e.g. +639123456789" required>
-                </div>
-            </div>
-            <div class="mb-4">
+            <div>
                 <hr class="solid">
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 small">
                     <label>Civil Status</label>
                     <select class="custom-select" name="status" required>
                         <option selected value="Single">Single</option>
@@ -86,13 +87,13 @@
                         <option value="Divorced">Divorced</option>
                     </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 small">
                     <label>School Year</label>
                     <input type="text" name="schoolyear" class="form-control" placeholder="e.g. YYYY-YYYY" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 mt-2">
+                <div class="col-sm-6 mt-2 small">
                     <label>Year Level</label>
                     <select class="custom-select" name="level" required>
                         <option selected value="1ST YEAR">1st</option>
@@ -102,7 +103,7 @@
                         <option value="5TH YEAR">5th</option>
                     </select>
                 </div>
-                <div class="col-sm-6 mt-2">
+                <div class="col-sm-6 mt-2 small">
                     <label>Course</label>
                     <select class="custom-select" name="course" required>
                         <option selected value="BS in Information Technology">BS in Information Technology</option>
@@ -111,17 +112,17 @@
                         <option value="BS in Electrical Engineering">BS in Electrical Engineering</option>
                         <option value="BS in Computer Engineering">BS in Computer Engineering</option>
                     </select>
-                </div>       
+                </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 mt-3 text-right ">
-                    <button type="submit" class="btn bg-info text-light ">
+                <div class="col-sm-12 mt-3 text-right">
+                    <button type="submit" class="btn bg-info text-light">
                         Submit
                     </button>
                 </div>
             </div>
         </div>
-        <div class="card-footer shadow-lg bg-info text-center text-light b-2">
+        <div class="card-footer shadow-lg bg-info text-center text-light b-2 small">
             Copyright &copy; 2020
         </div>
     </div>
