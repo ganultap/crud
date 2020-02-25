@@ -68,15 +68,15 @@
                 $address = "Invalid Input";
              }
 
-            echo ("<p>First Name:   $firstname</p>");
-            echo ("<p>Last Name:    $lastname</p>");
-            echo ("<p>Middle Name:  $middlename</p>");
-            echo ("<p>Address:  $address</p>");
+            echo ucwords(("<p>First Name:   $firstname</p>"));
+            echo ucwords(("<p>Last Name:    $lastname</p>"));
+            echo ucwords(("<p>Middle Name:  $middlename</p>"));
+            echo ucwords(("<p>Address:  $address</p>"));
             $newDate = date("m-d-Y", strtotime($birthdate));
             echo ("<p>Birthday:  $newDate</p>");
-            echo ("<p>Birth Place:  $birthplace</p>");
+            echo ucwords(("<p>Birth Place:  $birthplace</p>"));
             echo ("<p>Gender:  $gender</p>");
-            echo ("<p>Guardian:  $guardian</p>");
+            echo ucwords(("<p>Guardian:  $guardian</p>"));
             echo ("<p>Contact:  $contacts</p>");
             echo ("<p>Status:  $status</p>");
             echo ("<p>Year Level:  $yearlevel</p>");

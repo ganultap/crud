@@ -54,8 +54,7 @@
                 </div>
                 <div class="col-sm-6 small">
                     <label>Contact</label>
-                    <input type="text" name="contact" class="form-control" placeholder="e.g. +639123456789"
-                        required>
+                    <input type="text" name="contact" class="form-control" placeholder="e.g. +639123456789" required>
                 </div>
             </div>
             <div class="row">
@@ -81,7 +80,7 @@
                     <label>Civil Status</label>
                     <select class="custom-select" name="status" required>
                         <option selected value="Single">Single</option>
-                        <option value="In a relationship">In a relationship</option>
+                        <option value="In a Relationship">In a Relationship</option>
                         <option value="Married">Married</option>
                         <option value="Separated">Separated</option>
                         <option value="Divorced">Divorced</option>
@@ -93,17 +92,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 mt-2 small">
+                <div class="col-sm-3 mt-2 small">
                     <label>Year Level</label>
                     <select class="custom-select" name="level" required>
-                        <option selected value="1ST YEAR">1st</option>
-                        <option value="2ND YEAR">2nd</option>
-                        <option value="3RD YEAR">3rd</option>
-                        <option value="4TH YEAR">4th</option>
-                        <option value="5TH YEAR">5th</option>
+                        <option selected value="1st Year">1st</option>
+                        <option value="2nd Year">2nd</option>
+                        <option value="3rd Year">3rd</option>
+                        <option value="4th Year">4th</option>
+                        <option value="5th Year">5th</option>
                     </select>
                 </div>
-                <div class="col-sm-6 mt-2 small">
+                <div class="col-sm-9 mt-2 small">
                     <label>Course</label>
                     <select class="custom-select" name="course" required>
                         <option selected value="BS in Information Technology">BS in Information Technology</option>
@@ -116,8 +115,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 mt-3 text-right">
-                    <button type="submit" class="btn bg-info text-light">
-                        Submit
+                    <button type="submit" class="btn btn-info text-light">
+                        <i class="icon-user icon-white"></i> Submit
                     </button>
                 </div>
             </div>
