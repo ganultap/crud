@@ -1,38 +1,38 @@
-<form method="post" action="transactions/register.php">
-    <div class="small-middle-container mt-2">
-        <div class="shadow-lg p-3 card-header bg-info text-light">
+<form method="post" action="transactions/register.php" class="needs-validation" novalidate>
+    <div class="small-middle-container mb-3">
+        <div class="shadow-lg p-3 card-header bg-info">
             <div class="">
-                <hr data-content="REGISTRATION" class="hr-text">
+                <hr data-content="REGISTRATION" class="hr-text text-white">
             </div>
         </div>
         <div class="card-body shadow-lg p-3 bg-light">
             <div class="row">
-                <div class="col-sm-12 mt-2">
-                    <input type="text" name="firstname" class="form-control" placeholder="First Name" required>
+                <div class="col-sm-12 mb-3">
+                    <input id="validationCustom01" type="text" name="firstname" class="form-control" placeholder="First Name" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 mt-2">
+                <div class="col-sm-12 mb-3">
                     <input type="text" name="lastname" class="form-control" placeholder="Last Name" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 mt-2">
+                <div class="col-sm-12 mb-3">
                     <input type="text" name="middlename" class="form-control" placeholder="Middle Name" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 mt-2">
+                <div class="col-lg-12 mb-3">
                     <input type="text" name="address" class="form-control" placeholder="Complete Address" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 mt-2">
+                <div class="col-lg-12 mb-3">
                     <input type="text" name="guardian" class="form-control" placeholder="Name of Guardian" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 mt-2">
+                <div class="col-lg-12 mb-3">
                     <input type="text" name="email" class="form-control"
                         placeholder="Email Address e.g. juandelacruz@mail.com" required>
                 </div>
@@ -41,18 +41,18 @@
                 <hr class="solid">
             </div>
             <div class="row">
-                <div class="col-lg-12 mb-2 small">
+                <div class="col-lg-12 mb-3 small">
                     <label>Place of Birth</label>
                     <input type="text" name="birthplace" class="form-control"
                         placeholder="House No., Brgy., City, Country" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 small">
+                <div class="col-sm-6 small mb-3">
                     <label>Date of Birth</label>
                     <input type="date" name="birthdate" class="form-control" required>
                 </div>
-                <div class="col-sm-6 small">
+                <div class="col-sm-6 small mb-3">
                     <label>Contact</label>
                     <input type="text" name="contact" class="form-control" placeholder="e.g. +639123456789" required>
                 </div>
@@ -76,7 +76,7 @@
                 <hr class="solid">
             </div>
             <div class="row">
-                <div class="col-sm-6 small">
+                <div class="col-sm-6 small mb-3">
                     <label>Civil Status</label>
                     <select class="custom-select" name="status" required>
                         <option selected value="Single">Single</option>
@@ -86,13 +86,13 @@
                         <option value="Divorced">Divorced</option>
                     </select>
                 </div>
-                <div class="col-sm-6 small">
+                <div class="col-sm-6 small mb-3">
                     <label>School Year</label>
                     <input type="text" name="schoolyear" class="form-control" placeholder="e.g. YYYY-YYYY" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3 mt-2 small">
+                <div class="col-sm-3 small mb-3">
                     <label>Year Level</label>
                     <select class="custom-select" name="level" required>
                         <option selected value="1st Year">1st</option>
@@ -102,7 +102,7 @@
                         <option value="5th Year">5th</option>
                     </select>
                 </div>
-                <div class="col-sm-9 mt-2 small">
+                <div class="col-sm-9 small mb-3">
                     <label>Course</label>
                     <select class="custom-select" name="course" required>
                         <option selected value="BS in Information Technology">BS in Information Technology</option>
@@ -113,10 +113,20 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 mt-3 text-right">
-                    <button type="submit" class="btn btn-info text-light">
-                        <i class="icon-user icon-white"></i> Submit
+            <div class="form-row">
+                <div class="col-sm-9 mt-2 text-center form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-2 text-right form-check">
+                    <input type="hidden" name="form_submitted" value="1" />
+                    <button type="submit" value="submit" class="btn btn-info btn-sm">
+                        Submit
                     </button>
                 </div>
             </div>
