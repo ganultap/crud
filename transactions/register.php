@@ -1,5 +1,7 @@
-<?php 
+<?php
     include_once('../utilities/validation.php');
+    include("../includes/template/header.php");
+    include("../includes/template/footer.php");
 
          $firstname = $lastname = $middlename = $birthdate = $email = $gender = $course = $birthplace = $guardian = $contacts = $status = $yearlevel = $address = $schoolyear = "";
          $myArr = array();
@@ -9,27 +11,27 @@
             $firstname = test_input($_POST["firstname"]);
 
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/', $firstname)) {
-               $firstname = "Invalid Input";
+               $firstname = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
             }
 
             $lastname = test_input($_POST["lastname"]);
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
             $lastname)) {
-                $lastname = "Invalid Input";
+                $lastname = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
             $middlename = test_input($_POST["middlename"]);
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
             $middlename)) {
-                $middlename = "Invalid Input";
+                $middlename = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
             
             $email = test_input($_POST["email"]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $email = "Invalid email format";
+                $email = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
             }
 
@@ -40,54 +42,57 @@
 
             $schoolyear = test_input($_POST["schoolyear"]);
             if (!preg_match("/^[0-9]{4}-[0-9]{4}/",$schoolyear)){
-               $schoolyear = "Invalid Input";
+               $schoolyear = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
             }
 
             $birthdate = test_input($_POST["birthdate"]);
             if (preg_match("/(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$-^[0-9]{4}/",$birthdate)) {
-               $birthdate = "Birthdate is Invalid";
+               $birthdate = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
            }
 
             $birthplace = test_input($_POST["birthplace"]);
-            if (!preg_match('/(?!^ +$)^.+$/',
+            if (!preg_match('/^[a-zA-Z](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
             $birthplace)) {
-                $birthplace = "Invalid Input";
+                $birthplace = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
              $guardian = test_input($_POST["guardian"]);
              if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
              $guardian)) {
-               $guardian = "Invalid Input";
+               $guardian = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
              }
 
              $contacts = test_input($_POST["contact"]);
              if (!preg_match('/(^(\+63)(\d){10}$)/',
              $contacts)) {
-                $contacts = "Invalid Input";
+                $contacts = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
              $address = test_input($_POST["address"]);
-             if (!preg_match("/(?!^ +$)^.+$/",
-             $address)) {
-                $address = "Invalid Input";
-                array_push($myArr,1);
-             }
-             else {
-                 array_push($myArr,0);
-             }
+            if (!preg_match('/^[a-zA-Z](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
+            $address)) {
+               $address = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
+               array_push($myArr,1);
+            }
+
+            else {
+                  array_push($myArr,0);
+            }
 
             foreach ($myArr as $value) {
                 if ($value == 1){
-                    echo ('<span style="color:#FF5733;text-align:center;">Registration Failed: Invalid Input(s)</span>');
+                    echo ('<span style="color:#FF5733;">Registration Failed: Invalid Input(s)</span>');
+                    PHP_EOL;
                     break;
                 }
                 else {
-                    echo ('<span style="color:#239B56;text-align:center;">Congratulations! Registration Successful.(s)</span>');
+                    echo ('<span style="color:#239B56;">Congratulations! Registration Successful.</span>');
+                    PHP_EOL;
                 }
              }
              
