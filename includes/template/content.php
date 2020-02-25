@@ -1,7 +1,7 @@
 <form method="post" action="transactions/register.php">
     <div class="small-middle-container mt-2">
         <div class="shadow-lg p-3 card-header bg-info text-light">
-            <div class="mb-4">
+            <div class="">
                 <hr data-content="REGISTRATION" class="hr-text">
             </div>
         </div>
@@ -37,7 +37,7 @@
                         placeholder="Email Address e.g. juandelacruz@mail.com" required>
                 </div>
             </div>
-            <div class="mb-4">
+            <div>
                 <hr class="solid">
             </div>
             <div class="row">
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-sm-12 r-5">
                     <label class="r-2 small">Gender </label>
-                    <div class="form-check-inline p-3">
+                    <div class="form-check-inline mt-3">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="gender" value="Male" checked>Male
                         </label>
