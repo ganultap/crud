@@ -86,16 +86,15 @@
 
             foreach ($myArr as $value) {
                 if ($value == 1){
-                    echo ('<span style="color:#FF5733;">Registration Failed: Invalid Input(s)</span>');
+                    echo ('<h5><span style="color:#FF5733;">Registration Failed: Invalid Input(s)</span></h5>');
                     PHP_EOL;
-                    break;
+                     break;
                 }
                 else {
-                    echo ('<span style="color:#239B56;">Congratulations! Registration Successful.</span>');
+                    echo ('<h5><span style="color:#239B56;">Congratulations! Registration Successful.</span></h5>');
                     PHP_EOL;
                 }
              }
-             
                 echo ucwords(("<p>First Name:   $firstname</p>"));
                 echo ucwords(("<p>Last Name:    $lastname</p>"));
                 echo ucwords(("<p>Middle Name:  $middlename</p>"));
