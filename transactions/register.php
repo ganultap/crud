@@ -60,7 +60,7 @@
              }
 
              $guardian = test_input($_POST["guardian"]);
-             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
+             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s.{1}]+$)/',
              $guardian)) {
                $guardian = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
@@ -74,6 +74,8 @@
              }
 
              $address = test_input($_POST["address"]);
+            // if (!preg_match('/^[a-zA-Z0-9](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
+            // $address)) { - allows number at the start
             if (!preg_match('/^[a-zA-Z](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
             $address)) {
                $address = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
