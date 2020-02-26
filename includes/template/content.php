@@ -1,14 +1,14 @@
 <form method="post" action="transactions/register.php" class="needs-validation" novalidate>
     <div class="small-middle-container mb-3">
-        <div class="shadow-lg p-3 card-header bg-info">
-            <div class="">
-                <hr data-content="REGISTRATION" class="hr-text text-white">
-            </div>
+        <div class="card bg-info mt-5">
+            <img src="images/register.jpg" alt="header img">
+            <h4 class="text text-light">REGISTRATION</h4>
         </div>
-        <div class="card-body shadow-lg p-3 bg-light">
+        <div class="card-body shadow-lg p-3 bg-white border border-info">
             <div class="row">
                 <div class="col-sm-12 mb-3">
-                    <input id="validationCustom01" type="text" name="firstname" class="form-control" placeholder="First Name" required>
+                    <input id="validationCustom01" type="text" name="firstname" class="form-control"
+                        placeholder="First Name" required>
                 </div>
             </div>
             <div class="row">
@@ -93,7 +93,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-3 small mb-3">
-                    <label>Year Level</label>
+                    <label>Level</label>
                     <select class="custom-select" name="level" required>
                         <option selected value="1st Year">1st</option>
                         <option value="2nd Year">2nd</option>
@@ -113,8 +113,8 @@
                     </select>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="col-sm-9 mt-2 text-center form-check">
+            <div class="form-row text-center">
+                <div class="col-sm-12 mt-2 form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">
                         Agree to terms and conditions
@@ -123,7 +123,9 @@
                         You must agree before submitting.
                     </div>
                 </div>
-                <div class="col-sm-3 mt-2 text-right form-check">
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-12 mt-2 form-check">
                     <input type="hidden" name="form_submitted" value="1" />
                     <button type="submit" value="submit" class="btn btn-info btn-sm">
                         Submit
@@ -131,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-footer shadow-lg bg-info text-center text-light b-2 small">
+        <div class="card-footer shadow-lg bg-info text-center text-light mb-5 small">
             Copyright &copy; 2020
         </div>
     </div>

@@ -9,71 +9,70 @@
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $firstname = test_input($_POST["firstname"]);
-
+            $lastname = test_input($_POST["lastname"]);
+            $middlename = test_input($_POST["middlename"]);
+            $schoolyear = test_input($_POST["schoolyear"]);
+            $birthdate = test_input($_POST["birthdate"]);
+            $birthplace = test_input($_POST["birthplace"]);
+            $email = test_input($_POST["email"]);
+            $course = test_input($_POST["course"]);
+            $gender = test_input($_POST["gender"]);
+            $status = test_input($_POST["status"]);
+            $yearlevel = test_input($_POST["level"]);
+            $guardian = test_input($_POST["guardian"]);
+            $address = test_input($_POST["address"]);
+            $contacts = test_input($_POST["contact"]);
+            
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/', $firstname)) {
                $firstname = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
             }
 
-            $lastname = test_input($_POST["lastname"]);
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
             $lastname)) {
                 $lastname = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
-            $middlename = test_input($_POST["middlename"]);
             if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s{1}]+$)/',
             $middlename)) {
                 $middlename = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
             
-            $email = test_input($_POST["email"]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $email = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
             }
 
-            $course = test_input($_POST["course"]);
-            $gender = test_input($_POST["gender"]);
-            $status = test_input($_POST["status"]);
-            $yearlevel = test_input($_POST["level"]);
-
-            $schoolyear = test_input($_POST["schoolyear"]);
             if (!preg_match("/^[0-9]{4}-[0-9]{4}/",$schoolyear)){
                $schoolyear = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
             }
 
-            $birthdate = test_input($_POST["birthdate"]);
             if (preg_match("/(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$-^[0-9]{4}/",$birthdate)) {
                $birthdate = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
            }
 
-            $birthplace = test_input($_POST["birthplace"]);
             if (!preg_match('/^[a-zA-Z](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
             $birthplace)) {
                 $birthplace = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
-             $guardian = test_input($_POST["guardian"]);
              if (!preg_match('/(?=.{2,26})(?=^[a-zA-Z\s.{1}]+$)/',
              $guardian)) {
                $guardian = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                array_push($myArr,1);
              }
 
-             $contacts = test_input($_POST["contact"]);
              if (!preg_match('/(^(\+63)(\d){10}$)/',
              $contacts)) {
                 $contacts = '<span style="color:#FF5733;text-align:center;">Invalid Input</span>';
                 array_push($myArr,1);
              }
 
-             $address = test_input($_POST["address"]);
             // if (!preg_match('/^[a-zA-Z0-9](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
             // $address)) { - allows number at the start
             if (!preg_match('/^[a-zA-Z](?!.*?[^\na-zA-Z0-9,]{2}).*?[a-zA-Z0-9]$/',
