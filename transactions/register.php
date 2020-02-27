@@ -1,9 +1,9 @@
 <?php
-    include_once('../utilities/validation.php');
-    include("../includes/template/header.php");
-    include("../includes/template/footer.php");
+      include("../includes/template/header.php");
+      include_once('../utilities/validation.php');
+      include("../includes/template/footer.php");
 
-         $firstname = $lastname = $middlename = $birthdate = $email = $gender = $course = $birthplace = $guardian = $contacts = $status = $yearlevel = $address = $schoolyear = "";
+         $result = $firstname = $lastname = $middlename = $birthdate = $email = $gender = $course = $birthplace = $guardian = $contacts = $status = $yearlevel = $address = $schoolyear = "";
          $myArr = array();
          
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -87,13 +87,11 @@
 
             foreach ($myArr as $value) {
                 if ($value == 1){
-                    echo ('<h5><span style="color:#FF5733;">Registration Failed: Invalid Input(s)</span></h5>');
-                    PHP_EOL;
+                  echo ('<h5><span style="color:#FF5733;">Registration Failed: Invalid Input(s)</span></h5>');
                      break;
                 }
                 else {
-                    echo ('<h5><span style="color:#239B56;">Congratulations! Registration Successful.</span></h5>');
-                    PHP_EOL;
+                  echo ('<h5><span style="color:#239B56;">Congratulations! Registration Successful.</span></h5>');
                 }
              }
                 echo ucwords(("<p>First Name:   $firstname</p>"));
