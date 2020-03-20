@@ -70,16 +70,6 @@
             </tbody>
             
         </table>
-        <script type="text/javascript">
-            function onDelete(e) {
-                let ans = confirm("Are you sure?");
-                if (ans) {
-                    return true;
-                } else {
-                    e.preventDefault();
-                }
-            }
-        </script>
         <?php
     // }
     include("includes/template/footer.php");

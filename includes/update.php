@@ -16,8 +16,7 @@
             <input type="hidden" name="userid" value="<?= $userid; ?>">
             <div class="col-md-12 mb-2">
                 <small id="msg"></small>
-                <input type="text" value="<?= $data['username']; ?>" name="username" class="form-control"
-                    placeholder="Username" required>
+                <input type="text" value="<?= $data['username']; ?>" name="username" class="form-control" required>
             </div>
             <div class="col-md-12 mb-2">
                 <input type="password" name="oldpassword" class="form-control" placeholder="Old Password" required>

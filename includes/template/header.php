@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+    <script src="js/delete.js"></script>
     <link rel="icon" href="images/reg.png">
     <title>Register</title>
 </head>
