@@ -17,11 +17,6 @@
   }, false);
 })();
 
-$(".custom-file-input").on("change", function() {
-  var fileName = $(this).val().split("\\").pop();
-  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-});
-
 function myFunction() {
   var x = document.getElementById("myInput");
   if (x.type === "password") {

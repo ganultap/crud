@@ -11,68 +11,82 @@
                 <i class="fas fa-search text-white" aria-hidden="true"></i>
             </form>
         </div>
-        </div>
+    </div>
 
-        <table class="table table-bordered">
-            <thead class="table bg-light">
-                <tr>
-                    <th>Avatar</th>
-                    <th>UserID</th>
-                    <th>Email</th>
-                    <th>Username</th>
-                    <th>Usertype</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody class="table table-striped">
+    <table class="card-body table table-bordered text-center m-auto">
+        <thead class="table bg-light">
+            <tr>
+                <th>Avatar</th>
+                <th>UserID</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Usertype</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table table-striped">
 
-                <?php
+            <?php
             $sql = "SELECT * FROM users";
 
             
         
 
             if(isset($_GET['searchkey'])){
-                ?>
-                <p class="ml-2 mt-3">Search result(s) for <?= $_GET['searchkey'] ?></p>
-                <?php
+               
                 $searchkey = $_GET['searchkey'];
                 $sql = "SELECT * FROM users
                 WHERE username LIKE '%$searchkey%'
-                OR usertype LIKE '%$searchkey%'";
+                OR usertype LIKE '%$searchkey%'
+                OR userid LIKE '%$searchkey%'
+                OR user_status LIKE '%$searchkey%'";
+                $count = mysqli_query($conn, $sql);
+                $rows = mysqli_num_rows($count);
+                 if ($rows > 0) {
+                    ?>
+                    <p class="ml-2 mt-3">Found <b class="text text-success"><?php echo $rows?></b> result(s) for <b
+                    class="text text-success"><?= ucfirst($_GET['searchkey']) ?></b></p>
+                    <?php
+                 }else{
+                    ?>
+                    <p class="ml-2 mt-3">Found <b class="text text-danger"><?php echo $rows?></b> result(s) for <b
+                    class="text text-danger"><?= ucfirst($_GET['searchkey']) ?></b></p>
+                    <?php
+                 }
             }
-        $result = mysqli_query($conn, $sql);
 
+        $result = mysqli_query($conn, $sql);
+        
         foreach($result as $row){
 ?>
-                <tr>
-                    <td><?= "<img src=".$row['avatar']." width='50' height='50'>"; ?></td>
-                    <td><?= $row['userid']; ?></td>
-                    <td><?= $row['email']; ?></td>
-                    <td><?= $row['username']; ?></td>
-                    <td><?= ucfirst($row['usertype']); ?></td>
-                    <td><?= ($row['status']) ? 'Active' : 'Inactive'; ?></td>
-                    <td>
-                        <a href="update.php?userid=<?= $row['userid']; ?>">
-                            <span class="fas fa-edit text-info"></span>
-                            Update
-                        </a> |
-                        <a href="transactions/delete.php?userid=<?= $row['userid']; ?>">
-                            <span class="fas fa-trash text-danger"></span>
-                            Delete
-                        </a>
-                    </td>
-                </tr>
-                <?php 
+            <tr>
+                <td><?= "<img src=".$row['avatar']." width='50' height='50'>"; ?></td>
+                <td><?= $row['userid']; ?></td>
+                <td><?= $row['email']; ?></td>
+                <td><?= $row['username']; ?></td>
+                <td><?= ucfirst($row['usertype']); ?></td>
+                <td><?= ($row['user_status']) ? 'Active' : 'Inactive'; ?></td>
+                <td>
+                    <a href="update.php?userid=<?= $row['userid']; ?>">
+                        <span class="fas fa-edit text-info"></span>
+                        Update
+                    </a> |
+                    <a href="transactions/delete.php?userid=<?= $row['userid']; ?>">
+                        <span class="fas fa-trash text-danger"></span>
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            <?php 
             }
 ?>
-            </tbody>
-            
-        </table>
-        <?php
+        </tbody>
+
+    </table>
+    <?php
     // }
     include("includes/template/footer.php");
 ?>
-    
+
 </div>

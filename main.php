@@ -5,12 +5,11 @@
     <div class="card-header bg-info">
         <h5 class="text-center text-white">Logged in</h5>
     </div>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="alert alert-success text-center col-sm-8 mt-3" role="alert">
-            <?php echo "Welcome <strong>".$_GET['user'].'</strong> you motherfucker!' ?>
+    <div class="card-body">
+        <div class="alert alert-success text-center col-sm-12 mt-3" role="alert">
+            <?php echo "Welcome <strong>".$_GET['user'].',</strong>' ?> <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae voluptatem ut provident, enim ducimus quo asperiores vero soluta est, ea at optio perferendis iste similique, obcaecati quia labore officia!
         </div>
-        <div class="col-sm-2"></div>
     </div>
     <?php
     include("includes/template/footer.php");
